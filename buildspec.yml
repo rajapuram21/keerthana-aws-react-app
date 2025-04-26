@@ -1,13 +1,17 @@
-version: 0.2
 phases:
-install:
-commands:
-- npm install
-build:
-commands:
-- npm run build
+  install:
+    runtime-versions:
+      nodejs: 18
+    commands:
+      - echo Installing dependencies...
+      - npm install
+
+  build:
+    commands:
+      - echo Build started on `date`
+      - npm run build
+
 artifacts:
-files:
-- '**/*'
-base-directory: build
-discard-paths: yes
+  files:
+    - '**/*'
+  base-directory: build
